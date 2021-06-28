@@ -115,33 +115,7 @@ function customDecode(currentWindow)
 
     end
 
-    % disp('path1:');
-
-    % for i = 0:(PATH1.size() - 1)
-    %     disp(PATH1.get(i));
-    % end
-
-    % disp('path2:');
-
-    % for i = 0:(PATH2.size() - 1)
-    %     disp(PATH2.get(i));
-    % end
-
-    % disp('path3:');
-
-    % for i = 0:(PATH3.size() - 1)
-    %     disp(PATH3.get(i));
-    % end
-
-    % disp('path4:');
-
-    % for i = 0:(PATH4.size() - 1)
-    %     disp(PATH4.get(i));
-    % end
-
     pathWeights = [Path1Weight, Path2Weight, Path3Weight, Path4Weight];
-    % display(pathWeights);
-    % stop;
     index = find(pathWeights == min(pathWeights));
     decodedValues = [];
     OriginalValues = [];
