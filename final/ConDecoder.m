@@ -27,7 +27,6 @@ function decodedData = ConDecoder(receivedData, frameSize)
     %initialization
     %
     numberOfStates = 64;
-    %make int8 if using windowing
     timeSteps = int8(frameSize / 2);
     trellis = trellisArray();
     statesRecorder = zeros(numberOfStates, timeSteps);
