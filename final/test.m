@@ -1,22 +1,32 @@
-originalInputLength = 50;
+originalInputLength = 52;
 originalInput = round(rand(1, originalInputLength));
 
 encodedData = ConEncoder(originalInput, originalInputLength);
 encodedDataLength = length(encodedData);
 
 windowSize = 100;
+%add random noise
+numOfNoiseAdded = 3;
 
+for k = 0:numOfNoiseAdded
+    randomItem = round(rand(1, 1) * originalInputLength) + 1;
+    encodedData(1, randomItem) = xor(1, encodedData(1, randomItem));
+end
+
+%choose if we should use windowing or not
 if ((encodedDataLength - windowSize) > 0)
     totalDecoded = zeros(1, originalInputLength);
 
-    for i = 1:2:((originalInputLength - windowSize) * 2 + 2)
+    for i = 1:2:floor((encodedDataLength - windowSize) + 1)
         %decode window then shift
-        temp = encodedData(1, i:windowSize - 1);
-
         if (i == 1)
-            totalDecoded(1, 1:floor(windowSize / 2)) = decoded;
+            temp = encodedData(1, i:windowSize);
+            decodedData = ConDecoder(temp, windowSize);
+            totalDecoded(1, 1:floor(windowSize / 2)) = decodedData;
         else
-            totalDecoded(1, floor(windowSize / 2 + i / 2)) = decoded(1, length(decoded));
+            temp = encodedData(1, i:(windowSize + i - 1));
+            decodedData = ConDecoder(temp, windowSize);
+            totalDecoded(1, floor(windowSize / 2 + i / 2)) = decodedData(1, length(decodedData));
         end
 
     end
@@ -29,12 +39,11 @@ else
 end
 
 %%test if error occurred
-
-for index = length(originalInput)
+for index = 1:originalInputLength
 
     if output(1, index) ~= 0
-        disp(totalDecoded);
-        disp(originalInput);
+        disp('Error, there are some data not successfully corrected');
+        disp(index);
         break;
     end
 
