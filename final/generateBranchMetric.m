@@ -1,9 +1,5 @@
 function hammingDistances = generateBranchMetric(currentState, x, y, trellis)
     %%constants of trellis
-    X_0 = 3;
-    Y_0 = 4;
-    X_1 = 5;
-    Y_1 = 6;
     PREVIOUS_STATE_1 = 7;
     PREVIOUS_STATE_2 = 8;
     INPUT_OF_PREVIOUS_STATE = 9;
@@ -15,17 +11,17 @@ function hammingDistances = generateBranchMetric(currentState, x, y, trellis)
     previousInput = trellis(currentState + 1, INPUT_OF_PREVIOUS_STATE);
 
     if (previousInput == 0)
-        predictedX1 = trellis(hammingDistances(1, 1) + 1, X_0);
-        predictedY1 = trellis(hammingDistances(1, 1) + 1, Y_0);
-        predictedX2 = trellis(hammingDistances(2, 1) + 1, X_0);
-        predictedY2 = trellis(hammingDistances(2, 1) + 1, Y_0);
+        X = 3;
+        Y = 4;
     else
-        predictedX1 = trellis(hammingDistances(1, 1) + 1, X_1);
-        predictedY1 = trellis(hammingDistances(1, 1) + 1, Y_1);
-        predictedX2 = trellis(hammingDistances(2, 1) + 1, X_1);
-        predictedY2 = trellis(hammingDistances(2, 1) + 1, Y_1);
+        X = 5;
+        Y = 6;
     end
 
-    hammingDistances(1, 2) = bitxor(predictedX1, x) + bitxor(predictedY1, y);
+    predictedX1 = trellis(hammingDistances(1, 1) + 1, X);
+    predictedY1 = trellis(hammingDistances(1, 1) + 1, Y);
+    predictedX2 = trellis(hammingDistances(2, 1) + 1, X);
+    predictedY2 = trellis(hammingDistances(2, 1) + 1, Y);
+
     hammingDistances(2, 2) = bitxor(predictedX2, x) + bitxor(predictedY2, y);
 end
