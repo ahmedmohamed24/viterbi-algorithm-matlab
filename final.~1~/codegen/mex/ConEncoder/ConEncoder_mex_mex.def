@@ -1,0 +1,12 @@
+LIBRARY ConEncoder_mex.mexw64
+EXPORTS
+mexFunction
+mexfilerequiredapiversion
+emlrtMexFcnProperties
+ConEncoder
+emxEnsureCapacity_real_T
+emxFree_real_T
+emxInit_real_T
+ConEncoder_initialize
+ConEncoder_terminate
+ConEncoder_atexit

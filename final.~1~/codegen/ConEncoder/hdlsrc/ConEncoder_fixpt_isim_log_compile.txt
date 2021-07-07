@@ -1,0 +1,23 @@
+Release 9.2i - ISE Simulator Vhpcomp J.36
+Copyright (c) 1995-2007 Xilinx, Inc.  All rights reserved.
+Compiling vhdl file "ConEncoder_fixpt_pkg.vhd" in Library xlib.
+Package <conencoder_fixpt_pkg> compiled.
+Parsing "ConEncoder_fixpt_pkg.vhd": 0.11
+Codegen   xlib/ConEncoder_fixpt_pkg: 0.31
+Compiling vhdl file "ConEncoder_fixpt.vhd" in Library xlib.
+Entity <conencoder_fixpt> compiled.
+Entity <conencoder_fixpt> (Architecture <rtl>) compiled.
+Parsing "ConEncoder_fixpt.vhd": 0.09
+Codegen   xlib/ConEncoder_fixpt: 0.00
+Codegen   xlib/ConEncoder_fixpt/rtl: 0.98
+Compiling vhdl file "ConEncoder_fixpt_tb_pkg.vhd" in Library xlib.
+Package <conencoder_fixpt_tb_pkg> compiled.
+Package body <conencoder_fixpt_tb_pkg> compiled.
+Parsing "ConEncoder_fixpt_tb_pkg.vhd": 0.09
+Codegen   xlib/ConEncoder_fixpt_tb_pkg: 0.36
+Compiling vhdl file "ConEncoder_fixpt_tb.vhd" in Library xlib.
+Entity <conencoder_fixpt_tb> compiled.
+Entity <conencoder_fixpt_tb> (Architecture <rtl>) compiled.
+Parsing "ConEncoder_fixpt_tb.vhd": 0.10
+Codegen   xlib/ConEncoder_fixpt_tb: 0.00
+Codegen   xlib/ConEncoder_fixpt_tb/rtl: 0.60

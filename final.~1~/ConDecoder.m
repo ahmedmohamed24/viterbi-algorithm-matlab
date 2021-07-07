@@ -1,5 +1,4 @@
 function decodedData = ConDecoder(receivedData, frameSize)
-    %[nextState@IN=0,nextState@IN=1,FST_OP@IN=0,SND_OP@IN=0,FST_OP@IN=1,SND_OP@IN=1,PREV_State1,Prev_State2,IN@PREV_State]
     %%%@var trellis%
     %
     %(row number - 1) is the current state vlaue%
@@ -28,7 +27,7 @@ function decodedData = ConDecoder(receivedData, frameSize)
     %initialization
     %
     numberOfStates = 64;
-    timeSteps = int8(frameSize / 2);
+    timeSteps = int16(frameSize / 2);
     trellis = trellisArray();
     statesRecorder = zeros(numberOfStates, timeSteps);
     PM = zeros(numberOfStates, timeSteps + 1);

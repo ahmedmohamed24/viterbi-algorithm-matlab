@@ -1,0 +1,11 @@
+ConEncoder_mex.mexw64
+ConEncoder		ConEncoder
+ConEncoder_atexit		ConEncoder_atexit
+ConEncoder_initialize		ConEncoder_initialize
+ConEncoder_terminate		ConEncoder_terminate
+emlrtMexFcnProperties		emlrtMexFcnProperties
+emxEnsureCapacity_real_T		emxEnsureCapacity_real_T
+emxFree_real_T		emxFree_real_T
+emxInit_real_T		emxInit_real_T
+mexFunction		mexFunction
+mexfilerequiredapiversion		mexfilerequiredapiversion

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Fixed-Point Report for ConEncoder</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+	body { font-family: monospace; }
+	h2 { font-family: Arial, Helvetica, sans-serif; color: #990000; margin-top: 50px; }
+	table,th,td { border: 1px solid black; }
+	table { margin-top: 30px; }
+	th { align: center; font-weight: bold; }
+	tr.h { background-color: #99CCFF; }
+	tr.a { background-color: #EEEEFF; }
+	tr.b { background-color: #FFFFFF; }
+	tr.c { background-color: #FFA500; }
+	tr.a td, tr.b td { border-style: none; }
+	td.left { text-align: left; }
+	td.right { text-align: right; }
+	td.center { text-align: center; }
+	td.bold { font-weight: bold; }
+	pre { padding: 0px; margin: 0px; }
+	span { font-style: italic; }
+	.code, .code tr, .code th, .code td { border: none; border-collapse: collapse; }
+	.padd { padding-left: 5px; }
+	td.cov, th.cov { width: 50px; height: 20px; text-align: center; font-weight: bold; border-right: 2px solid black; cell-spacing: 0px; }
+	td.cov { vertical-align: top; }
+	td.black { color: #000000; font-weight: bold; padding-top: 4px; }
+	td.white { color: #FFFFFF; font-weight: bold; padding-top: 4px; }
+	.code th { font-weight: bold; border-bottom: 2px solid black; }
+</style>
+</head>
+<body>
+<h3>Generated on  2021-07-07 20:18:31</h3>
+<p>The following table shows fixed point instrumentation results</p>
+<h2>Fixed-Point Report <span>ConEncoder<span></h2>
+<TABLE class="code">
+<TR>
+<TH class="cov padd">Simulation Coverage</TH>
+<TH>Code</TH>
+</TR>
+<TR>
+<TD class="cov white" style="background-color: rgb(5,112,9);">100%</TD>
+<TD class="padd"><pre>function out = ConEncoder(in, size)
+    constraintLength = 7;
+    out = zeros(1, 20);
+%     out = zeros(1, size*2);
+
+    currentState = zeros(1, constraintLength - 1);
+%     currentState = zeros(1, 6);
+    %     while (index &lt;= size)
+</pre></TD>
+</TR>
+<TR>
+<TD class="cov black" style="background-color: rgb(255,160,118);">Once</TD>
+<TD class="padd"><pre>    for index = 1:size
+        out(1, index * 2 - 1) = bitxor(in(1, index), bitxor(currentState(1, 1), bitxor(currentState(1, 2), bitxor(currentState(1, 3), currentState(1, 6)))));
+        out(1, index * 2) = bitxor(in(1, index), bitxor(currentState(1, 2), bitxor(currentState(1, 3), bitxor(currentState(1, 5), currentState(1, 6)))));
+        currentState = [in(1, index) currentState(1, 1:5)];
+    end</pre></TD>
+</TR>
+<TR>
+<TD class="cov white" style="background-color: rgb(5,112,9);">100%</TD>
+<TD class="padd"><pre>
+
+end</pre></TD>
+</TR>
+</TABLE>
+<TABLE><TR class="h"><th>Variable Name</th><th>Type</th><th>Sim Min</th><th>Sim Max</th><th>Static Min</th><th>Static Max</th><th>Whole Number</th><th>ProposedType <BR /> (Best For WL = 14)</th></TR><TR class="a">
+<TD class="left">constraintLength</TD><TD class="left">double</TD><TD class="right">7</TD><TD class="right">7</TD><TD class="right"></TD><TD class="right"></TD><TD class="left">Yes</TD><TD class="left">numerictype(0, 3, 0)</TD></TR>
+<TR class="b">
+<TD class="left">currentState</TD><TD class="left">double 1 x 6 </TD><TD class="right">0</TD><TD class="right">1</TD><TD class="right"></TD><TD class="right"></TD><TD class="left">Yes</TD><TD class="left">numerictype(0, 1, 0)</TD></TR>
+<TR class="a">
+<TD class="left">in</TD><TD class="left">double 1 x 10 </TD><TD class="right">0</TD><TD class="right">1</TD><TD class="right"></TD><TD class="right"></TD><TD class="left">Yes</TD><TD class="left">numerictype(0, 1, 0)</TD></TR>
+<TR class="b">
+<TD class="left">index</TD><TD class="left">double</TD><TD class="right">1</TD><TD class="right">10</TD><TD class="right"></TD><TD class="right"></TD><TD class="left">Yes</TD><TD class="left">numerictype(0, 4, 0)</TD></TR>
+<TR class="a">
+<TD class="left">out</TD><TD class="left">double 1 x 20 </TD><TD class="right">0</TD><TD class="right">1</TD><TD class="right"></TD><TD class="right"></TD><TD class="left">Yes</TD><TD class="left">numerictype(0, 1, 0)</TD></TR>
+<TR class="b">
+<TD class="left">size</TD><TD class="left">double</TD><TD class="right">10</TD><TD class="right">10</TD><TD class="right"></TD><TD class="right"></TD><TD class="left">Yes</TD><TD class="left">numerictype(0, 4, 0)</TD></TR>
+</TABLE>
+
+</body>
+</html>

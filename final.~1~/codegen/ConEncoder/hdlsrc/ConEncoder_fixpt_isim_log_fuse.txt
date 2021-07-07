@@ -1,0 +1,72 @@
+Usage: fuse [-intstyle ise|xflow|silent] [-incremental] [-work <work_library>]
+{-lib <search_library>} [-initfile <sim_init_file>] [-nodebug] [-notimingchecks]
+[-nospecify] [-rangecheck] [-typdelay|-mindelay|-maxdelay] {-i <include_path>}
+{-d <macro_definition>} [-o <sim_exe>] [-prj <projectFile[.prj|.sprj]>] {-top
+<top_design_unit>} 
+Release 9.2i - ISE Simulator Fuse J.36
+Copyright (c) 1995-2007 Xilinx, Inc.  All rights reserved.
+
+The fuse command creates a simulation executable.
+
+Usage:  fuse { options } -top <entityName>[(<archName>)]
+   or:  fuse { options } -top <moduleName>
+
+Fuse takes one or more top level design unit names and
+figures out if the given name is a VHDL entity/architecture
+pair or a Verilog module.
+
+
+Options:
+ -f <cmd_file>              Read additional options from file <cmd_file>
+ -h                         Print the help message
+ -intstyle ise|xflow|silent Display messages according to specified style
+ -incremental               Compile files only if they have changed since
+                            last compile
+ -nodebug                   Compile with HDL debugging support off
+ -notimingchecks            Disable the timing checks
+ -nospecify                 Disable specify block functionality
+ -o <sim_exe>               Specify <sim_exe> as the name of the
+                            simulation executable
+ -work <work_library>       Specify <work_library> as the working library
+                            The format of the <work_library> argument is
+                            <name>[=<dir>] where <name> is the logical
+                            name of the library and <dir> is an optional
+                            physical directory of the library
+ -lib <search_library>      Specify mapping information for library
+                            <search_library>. The format of the 
+                            <search_library> argument is <name>[=<dir>] 
+                            where <name> is the logical name of the library
+                            and <dir> is an optional physical directory
+                            of the library
+                            For Verilog, multiple -lib options also define
+                            the order, libraries will be searched for the 
+                            instantiated Verilog modules
+-initfile <sim_init_file>   Specify <sim_init_file> as physical path to user
+                            defined simulator init file instead of default
+                            xilinxsim.ini file
+ -prj <projectFile>         A project file (ending with .prj/.sprj) 
+                            extension listing the HDL files
+                            Each line in a project file will have the 
+                            following format:
+                            <language> [<library>] <filename>
+                            where:
+                            <language> is vhdl | verilog
+                            <library>  is an optional working library
+                            <filename> is a source filename to be compiled
+ -top <top_design_unit>     A top level VHDL entity/architecture or Verilog
+module
+
+Options specific to VHDL:
+ -rangecheck                Compile VHDL files to enable run time range check
+
+Options specific to Verilog:
+ -d <macro_definition>      Define <macro_definition> The format of the
+                            <macro_definition> argument is <name>[=<val>]
+                            where <name> is the name of the macro, and
+                            <val> is an optional value for the macro
+ -i <include_path>          Specify directory <include_path> to be searched
+                            for include files
+ -mindelay                  Use minimum delays
+ -typdelay                  Use typical delays (default)
+ -maxdelay                  Use maximum delays
+
