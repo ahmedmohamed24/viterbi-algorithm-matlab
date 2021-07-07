@@ -1,0 +1,24 @@
+Release 9.2i - xst J.36
+Copyright (c) 1995-2007 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to ./xst/projnav.tmp
+CPU : 0.00 / 0.32 s | Elapsed : 0.00 / 0.00 s
+ 
+--> 
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+WARNING:HDLParsers:3607 - Unit work/viterbi is now defined in a different file.  It was defined in "C:/Users/Engy/Desktop/vhdl code/viterbi_decoder/viterbi.vhd", and is now defined in "C:/Users/Engy/Downloads/vhdl/vhdl code/viterbi_decoder/viterbi.vhd".
+WARNING:HDLParsers:3607 - Unit work/viterbi/Behavioral is now defined in a different file.  It was defined in "C:/Users/Engy/Desktop/vhdl code/viterbi_decoder/viterbi.vhd", and is now defined in "C:/Users/Engy/Downloads/vhdl/vhdl code/viterbi_decoder/viterbi.vhd".
+Compiling vhdl file "C:/Users/Engy/Downloads/vhdl/vhdl code/viterbi_decoder/viterbi.vhd" in Library work.
+Entity <viterbi> compiled.
+Entity <viterbi> (Architecture <behavioral>) compiled.
+CPU : 0.20 / 0.52 s | Elapsed : 0.00 / 0.00 s
+ 
+--> 
+
+Total memory usage is 182780 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
